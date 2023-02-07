@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://cfpx0ivg6hkjd"
+path="res://.godot/imported/SDFtoMesh.glsl-3bcfcf5ddbc0ac4137567d204d6befce.res"
+
+[deps]
+
+source_file="res://SDFtoMesh.glsl"
+dest_files=["res://.godot/imported/SDFtoMesh.glsl-3bcfcf5ddbc0ac4137567d204d6befce.res"]
+
+[params]
+

@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Material" uid="uid://18x53x3mq2ur" path="res://raymarcher.material" id="1_ny476"]
+[ext_resource type="Script" path="res://SDF3DRender.gd" id="3_t0ev8"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_hi4qm"]
+material = ExtResource( "1_ny476" )
+size = Vector3(20, 20, 20)
+
+[sub_resource type="Curve3D" id="Curve3D_5c531"]
+bake_interval = 0.5
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -1.25268, 5.99393, -3.99257, -1.64907, 0.0316076, 0.988682, 1.64907, -0.0316076, -0.988682, -10.2957, 5.72105, -3.49798, 0, 0, 0, 0, 0, 0, -7.91828, 2.18308, 0.243235, -1.07637, -3.57523, 3.12565, 1.07637, 3.57523, -3.12565, -1.05873, 5.0507, -1.13496),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_071pv"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="SDFMesh3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.550657, 0, 0)
+mesh = SubResource( "BoxMesh_hi4qm" )
+script = ExtResource( "3_t0ev8" )
+render_mode = 0
+step = 0.2
+
+[node name="Path3D" type="Path3D" parent="SDFMesh3D"]
+curve = SubResource( "Curve3D_5c531" )
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.931295, -0.363566, -0.0225783, 0.276082, 0.664049, 0.694851, -0.237631, -0.653344, 0.7188, -2.73005, 9.30923, 14.2376)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.413625, 0.373392, 0.830357, 0.119583, -0.926411, 0.357018, 0.90256, -0.0483754, -0.427838, 16.1904, 19.9351, 0)
+light_energy = 0.62
+light_indirect_energy = 0.0
+light_angular_distance = 3.03
+shadow_enabled = true
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.12194, 3.58765, 0.870869)
+light_energy = 5.74
+shadow_enabled = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
+size = Vector3(210, 1, 103.438)
+material = SubResource( "StandardMaterial3D_071pv" )
+metadata/_edit_lock_ = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.288, 4.287, -4.127)
+size = Vector3(1, 12.4869, 1.80878)
+metadata/_edit_lock_ = true
