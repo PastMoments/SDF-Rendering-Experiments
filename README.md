@@ -3,7 +3,7 @@
 My experiment in rendering an SDF, using Godot Engine
 
 features a [shader that raymarches to render the SDF](raymarcher.gdshader)
-as well as a [computer shader to convert said SDF to a mesh, using marching cubes (and some minor modifications)](SDFtoMesh.glsl)
+as well as a [compute shader to convert said SDF to a mesh, using marching cubes (and some minor modifications)](SDFtoMesh.glsl)
 
 ![example](https://user-images.githubusercontent.com/3858420/217263842-54aabc49-43bc-4aae-a14f-21d2b6199150.gif)
 ![image](https://user-images.githubusercontent.com/3858420/217263008-74199478-53f0-4af9-b437-08b385258303.png)
